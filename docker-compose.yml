@@ -12,7 +12,7 @@ services:
       - ./data:/data
       - ./logs:/app/logs
     environment:
-      - SQL_DSN=root:123456@tcp(host.docker.internal:3306)/one-api  # Змініть цей рядок або закоментуйте, щоб використовувати SQLite як базу даних
+      - SQL_DSN=root:Wearius12@srv-captain--mysql-db:3306/one-api  # Змініть цей рядок або закоментуйте, щоб використовувати SQLite як базу даних
       - REDIS_CONN_STRING=redis://redis
       - SESSION_SECRET=pWh4xA0aMq  # Змініть на випадковий рядок
       - TZ=Asia/Shanghai
