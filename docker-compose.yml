@@ -9,11 +9,11 @@ services:
     ports:
       - "3001:3000"
     volumes:
-      - ./data:/data
-      - ./logs:/app/logs
+      - /home/andrew/one-api/data:/data
+      - /var/log/one-api:/app/logs
     environment:
       - SQL_DSN=root:Wearius12@srv-captain--mysql-db:3306/one-api  # Змініть цей рядок або закоментуйте, щоб використовувати SQLite як базу даних
-      - REDIS_CONN_STRING=redis://redis
+      - REDIS_CONN_STRING=redis://srv-captain--redis-one-api
       - SESSION_SECRET=pWh4xA0aMq  # Змініть на випадковий рядок
       - TZ=Asia/Shanghai
 #      - NODE_TYPE=slave  # Для розгортання на кількох машинах, розкоментуйте цей рядок для підкоресленої ноди
