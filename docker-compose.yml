@@ -12,10 +12,13 @@ services:
       - /home/andrew/one-api/data:/data
       - /var/log/one-api:/app/logs
     environment:
-      - SQL_DSN=root:Wearius12@srv-captain--mysql-db:3306/one-api  # Змініть цей рядок або закоментуйте, щоб використовувати SQLite як базу даних
-      - REDIS_CONN_STRING=redis://srv-captain--redis-one-api
+      - SQL_DSN=root:Wearius12@tcp(srv-captain--mysql-db:3306)/one-api  # Змініть цей рядок або закоментуйте, щоб використовувати SQLite як базу даних
+      - REDIS_CONN_STRING=redis://srv-captain--redis:6379
       - SESSION_SECRET=pWh4xA0aMq  # Змініть на випадковий рядок
-      - TZ=Asia/Shanghai
+      - TZ=Europe/Kiev
+      - GO111MODULE=on
+      - CGO_ENABLED=1
+      - GOOS=linux
 #      - NODE_TYPE=slave  # Для розгортання на кількох машинах, розкоментуйте цей рядок для підкоресленої ноди
 #      - SYNC_FREQUENCY=60  # Для регулярного завантаження даних з бази даних, розкоментуйте цей рядок
 #      - FRONTEND_BASE_URL=https://openai.justsong.cn  # Для розгортання на кількох машинах, розкоментуйте цей рядок для підкоресленої ноди
